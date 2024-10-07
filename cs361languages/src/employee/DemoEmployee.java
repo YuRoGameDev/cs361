@@ -31,30 +31,30 @@ public class DemoEmployee {
 		Employee emp3 = pEmp1;
 		System.out.println("emp3");
 		emp3.whoAmI();
-		// TODO To complete
-		// emp3.whoAmI() // prints ... because ...
-		// emp3.getHourlyRate(); // returns syntax error because ...
+		// TODO To complete - Completed
+		// emp3.whoAmI() // prints "PART TIME EMPLOYEE" because its an instance of PartTimeEmployee
+		//emp3.getHourlyRate(); // returns syntax error because getHourlyRate() isn't defined in Employee
 
-		// TODO To complete
+		// TODO To complete - Completed 
 		// Add the condition that test that emp3 is an instance of part time employee at
 		// this time
-		// if (CONDITION) {
-		// System.out.println("emp3 instance of part time employee"); // printed
-		// } else {
+		if (emp3 instanceof PartTimeEmployee) {
+		System.out.println("emp3 instance of part time employee"); // printed
+		} else {
 		System.out.println("emp3 not instance of part time employee");
-		// }
+		}
 
 		// Downcasting 1
-		// TODO Uncomment and run the code
-		// PartTimeEmployee pEmp3 = (PartTimeEmployee) emp1;
-		// TODO To complete
-		// This instruction compiles / does not compile
+		// TODO Uncomment and run the code - Completed 
+		//PartTimeEmployee pEmp3 = (PartTimeEmployee) emp1;
+		// TODO To complete - Completed 
+		// This instruction does not compile
 		// This instruction returns a ClassCastException at run time
-		// because ...
+		// because eemp1 is not an instance of PartTimeEmployee
 
 		// Downcasting 2
 		// Requires the use of intanceof to avoid a run time cast exception
-		// TODO Look at the solution below
+		// TODO Look at the solution below - Completed 
 		if (emp3 instanceof PartTimeEmployee) {
 			System.out.println("emp3 instance of part time employee"); // printed
 			PartTimeEmployee pEmp4 = (PartTimeEmployee) emp3; // cast required

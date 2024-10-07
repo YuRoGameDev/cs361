@@ -31,8 +31,13 @@ public class InnerOutermostEval {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		System.out.println("So what is it? Innermost or outermost evaluation?");
-		System.out.println("f(1,1) = " + f(1,1));
+		try{
+			System.out.println("So what is it? Innermost or outermost evaluation?");
+			System.out.println("f(1,1) = " + f(1,1));
+		} catch (StackOverflowError e) {
+			System.out.println("Java is using innermost causing infinite recursion and stackoverflow");
+		}
+		
 
 	}
 

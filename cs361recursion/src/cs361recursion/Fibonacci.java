@@ -22,9 +22,12 @@ public class Fibonacci {
 		if (n < 0 || n > 45) {
 			throw new IllegalArgumentException("n should be between 0 and 45");
 		} else {
-			if (n == 0 || n == 1) {
-				return 1;
-			} else {
+			if (n == 0) {
+				return 0; //Fibonacchi of 0 is 0
+			} else if (n == 1) {
+				return 1; //Fibonacchi of 1 is 1
+			}
+			{
 				return fibonacci(n - 1) + fibonacci(n - 2);
 			}
 		}
@@ -34,7 +37,8 @@ public class Fibonacci {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		for (int i = 0; i <= 100; i++) {
+		//45 is the limit for fibonachi
+		for (int i = 0; i <= 45; i++) {
 			System.out.println("Fibonacci(" + i + ") = " + fibonacci(i));
 		}
 

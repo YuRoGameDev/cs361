@@ -19,6 +19,8 @@ package reflection;
 
 import java.lang.reflect.Method;
 
+import circle.ColoredCircle;
+
 public class Reflection {
 
 	/**
@@ -43,9 +45,19 @@ public class Reflection {
 		if (o == null)
 			throw new IllegalArgumentException("Object passesd is null");
 
-		// TODO To complete
+		// TODO To complete - Completed 
 		// You need to use the EXACT format of the output
 		// Hint: Use the method getSuperClass()
+		System.out.print("Inheritance chain: ");
+		Class<?> currentClass = o.getClass();
+		while (currentClass != null) {
+			System.out.print(currentClass.getName());
+			currentClass = currentClass.getSuperclass();
+			if (currentClass != null) {
+				System.out.print(" inherits from");
+			}
+		}
+		System.out.println();
 	}
 	
 	/**
@@ -59,10 +71,14 @@ public class Reflection {
 		Method[] m = o.getClass().getMethods();
 
 		// List of methods
-		// TODO To complete
+		// TODO To complete - Completed 
 		// Print each method on one line
 		// Use this EXACT format
-		System.out.println("\n");
+		System.out.println("List of methods:");
+		for (Method method : m) {
+			System.out.println(method);
+		}
+		
 	}
 
 	/**
@@ -80,10 +96,19 @@ public class Reflection {
 		Reflection r = new Reflection();		
 		
 		// Demonstration of the methods on an objet of type String
-		// TODO To complete
+		// TODO To complete - Completed 
+		String str = "Hello World";
+		r.correspondingClass(str);
+		r.inheritanceChain(str);
+		r.listMethods(str);
+		System.out.println();
 		
 		// Demonstration of the methods on an objet of type ColoredCircle
-		// TODO To complete		
+		// TODO To complete	- Completed 
+		ColoredCircle cc = new ColoredCircle();
+		r.correspondingClass(cc);
+		r.inheritanceChain(cc);
+		r.listMethods(cc);	
 	}
 
 }

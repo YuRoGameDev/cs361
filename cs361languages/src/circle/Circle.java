@@ -5,12 +5,12 @@ package circle;
 
 /**
  * @author ADD YOUR NAME
- *
+ * Younes Roumila
  */
 
-// TODO Complete the code
+// TODO Complete the code - Completed
 
-public class Circle extends GraphicObject {
+public class Circle extends GraphicObject implements Cloneable {
 
 	// No use of encapsulation
 	public double centerX, centerY;
@@ -54,33 +54,35 @@ public class Circle extends GraphicObject {
 	void moveTo(int newX, int newY) {
 	}
 
-	// TODO To complete
+	// TODO To complete - Completed
 	/**
 	 * @return the Circle with this EXACT format Circle: centerX = ... centerY = ... radius = ...
 	 */
 	@Override
 	public String toString() {
-		return super.toString();
+		return ("Circle: centerX = " +centerX + " centerY = " + centerY + " radius = " + radius);
 	}
 
-	// TODO To complete
-	// TODO Be sure that you understand the difference between equals and ==
+	// TODO To complete - Completed
+	// TODO Be sure that you understand the difference between equals and == - Completed
 	/**
 	 * @return true if this and obj have the same values for
 	 * centerX, centerY and radius
 	 */
 	@Override
 	public boolean equals(Object obj) {
-		return super.equals(obj);
+		Circle other = (Circle) obj;
+		return (centerX == other.centerX && centerY == other.centerY && radius == other.radius);
 	}
 
-	// TODO To complete
+	// TODO To complete - Completed
 	/**
 	 * @return an exact copy of the Circle that is a new instance 
 	 */
-	// @Override
-	// protected Object clone() throws CloneNotSupportedException {
-	// return super.clone();
-	// }
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		Circle cloned = (Circle) super.clone();
+	return cloned;
+	}
 
 }
